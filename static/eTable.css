@@ -1,0 +1,345 @@
+
+/*XYG MODIFY*/
+/*
+body,button,input,select,textarea {
+ font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif
+}*/
+
+.content {/*XYG MODIFY*/
+  min-height: 0;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 0.93rem;
+}
+
+/*XYG MODIFY*/
+.form-footer>.button:not(:last-child),.form-footer>div>.button:not(:last-child)
+{
+ margin-right: 10px;
+}
+
+.modal-card-title {
+ margin-bottom:0!important;/*XYG MODIFY*/
+}
+
+/*XYG MODIFY*/
+.is-loading {
+ /*position:relative;*/
+ pointer-events:none;
+ opacity:.8;
+}
+
+.is-loading:after {
+ -webkit-animation:spinAround .5s infinite linear;
+ animation:spinAround .5s infinite linear;
+ border:2px solid #dbdbdb;
+ border-radius:290486px;
+ border-right-color:transparent;
+ border-top-color:transparent;
+ content:"";
+ display:block;
+ height:1em;
+ position:relative;
+ width:1em;
+ position:absolute;
+ top:calc(50% - 2.5em);
+ left:calc(50% - 2.5em);
+ width:5em;
+ height:5em;
+ border-width:.4em
+}
+
+.b-table{
+  position: relative;
+  font-size: 0.93rem;
+ }
+
+.b-table .table-wrapper {
+  overflow-x:auto;
+  min-height:150px;
+  /*position: relative;*/
+ }
+
+@media print,screen and (min-width:769px) {
+    .b-table .table td, .b-table .table .th-wrap{
+        white-space:nowrap;
+    }
+}
+
+@media print,screen and (max-width:768px) {
+    .pagination.is-simple .pagination-previous {
+        order: 1;
+    }
+    .pagination.is-simple small.info {
+        order: 2;
+    }
+    .pagination.is-simple .pagination-next {
+        order: 3;
+    }
+}
+
+/*.b-table .table{min-height:270px;overflow-x:auto;overflow-y:hidden}*/
+
+/*解决选中行的光标进入的时候显示问题*/
+ .b-table .table tr.is-selected:hover {
+  background-color:#7957d5
+ }
+
+/*为了覆盖AdminLte默认的modal类的背景*/
+/*.modal {
+    background: rgba(0, 0, 0, 0);
+}
+*/
+.modal .modal.is-active {
+    z-index:21;
+}
+
+
+.reveal-modal-bg {
+    position: fixed;
+    height: 100%;
+    width:100%;
+    background:#000;
+    background-color:hsla(0,0%,4%,.86);
+    z-index:19;
+    display:none;
+    top:0;
+    left:0;
+}
+
+.reveal-modal-bg-transparent {
+    position: fixed;
+    height: 100%;
+    width:100%;
+    background:#000;
+    background:rgba(0,0,0,0);
+    z-index:19;
+    display:none;
+    top:0;
+    left:0;
+}
+
+.modal-card-foot{
+    justify-content: space-between;
+    /*padding-bottom: 5px;*/
+}
+
+.modal-card-foot>div.field{
+    width: 100%;
+}
+
+.media-content{/*当提示的内容过多，自动换行的效果*/
+    word-wrap: break-word;
+    width: 100%;
+}
+
+/*2列横向布局的form*/
+.is-horizontal-2 .field-label{
+  flex-grow: 2;
+}
+
+@media print,screen and (max-width:768px) {
+    .is-horizontal-2 .field-label{
+      margin-top: 0.75rem;
+    }
+}
+
+/*修正分页的样式问题*/
+.pagination ul {
+    list-style: none !important;
+}
+.pagination-list {
+    margin-top: 0 !important;
+}
+.pagination-list li + li {
+    margin-top: 0 !important;
+}
+/*
+.content ul {
+    list-style: none;
+}
+
+.content ol,.content ul {
+    margin-left:0;
+    margin-top:0;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pagination-list > li{
+    margin-top:0 !important;
+}
+*/
+
+.icon .fa, .icon .mdi {
+    font-size: 22.45px;
+}
+
+.control>.icon .fa, .control>.icon .mdi {
+    font-size: 19px;
+}
+
+/*lov框*/
+.lov-content {
+    min-height: 0;
+    padding: 10px 10px 5px 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.lov-content .level {
+    min-height: 0;
+    padding-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*
+.lov-content .table-wrapper .control :not(.querybox)
+,.lov-content .table-wrapper .input :not(.querybox)
+,.lov-content .table-wrapper .textarea :not(.querybox)
+, .lov-modal-card-body .table-wrapper :not(.querybox){
+    font-size: 13px;
+}
+
+.querybox, .is-empty{
+    font-size: 14px;
+}*/
+/*
+.lov-modal-card-body .table-wrapper{
+    font-size: 13px;
+}
+*/
+
+.lov-modal-card-body {
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    overflow: auto;
+    padding: 0px;
+}
+
+.lov-content .querybox{
+    justify-content:center;
+    padding:0 40px 0 40px;
+}
+
+/*解决无法定制弹出窗口的width问题*/
+/*.modal-card, .modal-content {
+    min-width: 640px;
+    width:inherit;
+}
+*/
+
+@media screen and (max-width:768px) {
+.modal-card {
+  width:100%;
+ }
+}
+
+@media print,screen and (min-width:769px) {
+ .modal-card.is-large {
+  margin:0 auto;
+  max-height:calc(100vh - 40px);
+  width:840px
+ }
+}
+/*
+.etable-toolbar {
+    left: 10px;
+    transform-origin: top left;
+    z-index: 1020;
+    position: fixed;
+    top: 10px;
+    width:90px;
+    cursor:pointer;
+}*/
+.etable-toolbar {
+    left: calc(50vw - 260px);
+    transform-origin: top left;
+    z-index: 49;
+    position: fixed;
+    top: 5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.etable-toolbar-icon {
+    transform-origin: top left;
+    position: relative;
+    width:4em;
+    cursor:pointer;
+}
+
+/*
+.etable-toolbar .collapse-content {
+    margin-left:10px;
+}
+*/
+/*
+.etable-toolbar .icon {
+    font-size: 29px;
+}*/
+
+.etable-toolbar .button {
+    width: 2.3rem;
+    height: 2.3rem;
+    padding-top: .4rem;
+}
+
+.etable-toolbar:hover {
+  cursor: move;
+}
+
+
+@media print,screen and (max-width:768px) {
+    .etable-toolbar {
+        left: 5px;
+        top: 5px;
+    }
+    /*
+    .etable-toolbar {
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        left: 0;
+        top: 10px;
+    }
+    .etable-toolbar .field.is-grouped{
+        flex-direction:column;
+    }
+    .etable-toolbar .field.is-grouped .control{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-bottom: .25rem !important;
+    }
+    */
+    .toolbarTitle{
+        display:none !important;
+    }
+}
+
+.line-body {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 1em 1em 0 1em;
+}
+
+.input[readonly], .textarea[readonly] {
+    background-color: #C6C6C6 !important;
+}
+
+/*lightyellow*/
+.field div[aria-required] .input, .field span[aria-required] .input, .field div[aria-required] select{
+    background-color: #ffffa4;
+}
