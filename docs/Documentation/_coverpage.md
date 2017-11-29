@@ -1,4 +1,4 @@
-﻿![logo](_media/icon.svg)
+﻿![logo](../jebms-logo.jpg)
 
 # jebms admin system <small>1.0.0</small>
 
