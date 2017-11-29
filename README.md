@@ -20,6 +20,7 @@
 ![Login](docs/preview/jebms-phone-demo.jpg)
 
 ## Tech Stack
+前端
 - Vue 2.0
 - Vue-router
 - Vue-resource
@@ -31,7 +32,7 @@
 - [flatpickr](https://chmln.github.io/flatpickr/)
 - [vee-validate](https://github.com/baianat/vee-validate)
 
-后端(还在整理代码)：
+后端(还在整理代码，暂未开源)：
 - Spring,SpringMVC,Spring Boot,Spring Security
 - MyBatis
 - Redis
