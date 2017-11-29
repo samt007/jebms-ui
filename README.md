@@ -33,7 +33,7 @@ Spring,SpringMVC,Spring Boot,Spring Security,MyBatis,Redis,druid数据库连接�
   表格数据编辑的逻辑处理提供了例如preInsert/postInsert等的'触发器'。可以很方便功能的扩展。
 4. 提供完整的KeyBoard键盘操作。特别是在编辑数据方便，可以极大提高工作效率。
   例如：表格行切换支持键盘上下换行，左右换页。回车按键快捷弹出编辑数据界面。
-5. 
+5. 按照EBS的多语言的架构，数据库端完全支持多语言。前端的多语言效果待开发。
 
 
 ```
