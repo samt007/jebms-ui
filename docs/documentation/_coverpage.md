@@ -10,4 +10,4 @@
 
 
 [GitHub](https://github.com/samt007/jebms-ui)
-[Get Started](#jebms-ui)
+[Get Started](#jebms)
