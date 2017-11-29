@@ -32,7 +32,12 @@
 - [vee-validate](https://github.com/baianat/vee-validate)
 
 后端(还在整理代码)：
-Spring,SpringMVC,Spring Boot,Spring Security,MyBatis,Redis,druid数据库连接池,swagger（前后端开发的契约工具），Maven
+- Spring,SpringMVC,Spring Boot,Spring Security
+- MyBatis
+- Redis
+- druid 数据库连接池
+- swagger 前后端开发的契约工具
+- Maven 项目管理工具
 
 ## 项目参考
 - [vue-admin](https://github.com/vue-bulma/vue-admin): 参考界面的总体布局
