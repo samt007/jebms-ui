@@ -1,5 +1,7 @@
-<h1 align="center">jebms-admin</h1>
+
 <p align="center">
+  <p><img width="500" src="docs/jebms-logo.png"></p>
+  <h1>jebms-admin</h1>
   <b>A Vue.js project</b>
 </p>
 
