@@ -6,6 +6,14 @@
 
 ### [Demo Pending...]()
 
+### System Preview
+
+## Desktop
+![Login](https://github.com/samt007/jebms-ui/docs/preview/phone-login.jpg)
+
+## Phone
+
+
 ## Tech Stack
 - Vue 2.0
 - Vue-router
