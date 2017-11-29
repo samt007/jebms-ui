@@ -8,7 +8,7 @@
 
 ### Links
 
-- [Documentation](https://samt007.github.io/jebms-ui/Documentation)
+- [Documentation](https://samt007.github.io/jebms-ui/documentation)
 - [Demo Pending...]()
 
 ### System Preview
