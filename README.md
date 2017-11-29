@@ -9,10 +9,15 @@
 ### System Preview
 
 ## Desktop
-![Login](https://github.com/samt007/jebms-ui/docs/preview/phone-login.jpg)
+![Main](docs/preview/desktop-main.jpg)
+![Resp](docs/preview/desktop-resp.jpg)
+![Table](docs/preview/desktop-table-editor.jpg)
 
 ## Phone
-
+![Login](docs/preview/phone-login.jpg)
+![Main](docs/preview/phone-main.jpg)
+![Resp](docs/preview/phone-resp.jpg)
+![Table](docs/preview/phone-table-editor.jpg)
 
 ## Tech Stack
 - Vue 2.0
