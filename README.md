@@ -1,9 +1,9 @@
 
-<p align="center">
-  <p><img width="500" src="docs/jebms-logo.png"></p>
+<div align="center">
+  <p><img width="400" src="docs/jebms-logo.jpg"></p>
   <h1>jebms-admin</h1>
   <b>A Vue.js project</b>
-</p>
+</div>
 
 
 ### Links
