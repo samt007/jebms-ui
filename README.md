@@ -1,6 +1,6 @@
 
 <div align="center">
-  <p><img width="400" src="docs/jebms-logo.jpg"></p>
+  <p><img width="300" src="docs/jebms-logo.jpg"></p>
   <h1>jebms-admin</h1>
   <b>A Vue.js project</b>
 </div>
