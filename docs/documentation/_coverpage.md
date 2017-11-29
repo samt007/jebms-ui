@@ -1,4 +1,4 @@
-![logo](../jebms-logo.jpg)
+![logo](../jebms-logo.png)
 
 # jebms admin system <small>1.0.0</small>
 
@@ -10,4 +10,4 @@
 
 
 [GitHub](https://github.com/samt007/jebms-ui)
-[Get Started](#quick-start)
+[Get Started](#jebms-ui)
