@@ -23,7 +23,7 @@
 前端
 - Vue 2.0
 - Vue-router
-- Vue-resource
+- Vue-axios
 - Vue-cli
 - ES6
 - LocalStorage
