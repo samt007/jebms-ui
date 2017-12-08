@@ -9,7 +9,7 @@
 ### Links
 
 - [Documentation](https://samt007.github.io/jebms-ui/documentation)
-- [Demo Pending...]()
+- [Demo](http://jebms.xwtw.com:8888) 测试用户/密码：test/test
 
 ### System Preview
 
