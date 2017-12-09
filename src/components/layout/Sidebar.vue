@@ -34,7 +34,8 @@
 
 <script>
 
-import Vue from 'vue';
+import Vue from 'vue'
+
 Vue.component('menu-item', {
   template: `
       <li v-if="innerMenu.leaf==false">
@@ -68,8 +69,6 @@ Vue.component('menu-item', {
       innerMenu:this.menu,
       expanded:false
     }
-  },
-  computed:{
   },
   methods:{
     toggle () {

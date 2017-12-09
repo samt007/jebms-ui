@@ -1,5 +1,6 @@
 <template>
   <section class="app-main" :style="[hiddenSidebarStyle]">
+    <div style="z-index:17;height:100%;position:fixed;" class="modal-background" @click="toggleSidebar({opened: !sidebar.opened})" v-if="device.isMobile&sidebar.opened"></div>
     <div class="container is-fluid is-marginless app-content">
       <levelbar></levelbar>
       <transition
@@ -15,7 +16,7 @@
 
 <script>
 import Levelbar from './Levelbar'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
@@ -30,6 +31,11 @@ export default {
         return this.sidebar.hidden ? { 'margin-left': 0 } : { 'margin-left': this.$store.state.global.menuWidth+'px' }
       }
     }
+  },
+  methods: { 
+      ...mapActions([
+        'toggleSidebar'
+      ])
   },
 
   components: {

@@ -32,96 +32,53 @@
         <div id="navbar-menu-main" class="navbar-menu" :class="{'is-active':activeMenu}"
           :style="activeMenu ? 'overflow-y: scroll;max-height: 480px;' : 'overflow-y: inherit;max-height: inherit;'">
           <div class="navbar-start">
+
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link " href="/documentation/overview/start/">
+              <div class="navbar-link">
                 功能文档
-              </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item " href="/documentation/overview/start/">
-                  Overview
-                </a>
-                
-                <hr class="navbar-divider">
-                <div class="navbar-item">
-                  <div>
-                    <p class="is-size-6-desktop">
-                      <strong>0.1.0</strong>
-                    </p>
-                    
-                      <small>
-                        <a class="bd-view-all-versions" href="https://versions.bulma.io/">View all versions</a>
-                      </small>
-                    
-                  </div>
-                </div>
               </div>
-            </div>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link " href="https://bulma.io/blog/">
-                工作博客
-              </a>
-              <div id="blogDropdown" class="navbar-dropdown is-boxed" data-style="width: 18rem;">
-                
-                  <a class="navbar-item" href="/2017/10/09/roses-are-red-links-are-blue/">
-                    <div class="navbar-content">
-                      <p>
-                        <small class="has-text-link">09 Oct 2017</small>
-                      </p>
-                      <p>Roses are red – Links are blue</p>
-                    </div>
-                  </a>
-                
-                  <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                    <div class="navbar-content">
-                      <p>
-                        <small class="has-text-link">03 Aug 2017</small>
-                      </p>
-                      <p>New feature: list of tags</p>
-                    </div>
-                  </a>
-                
-                  <a class="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
-                    <div class="navbar-content">
-                      <p>
-                        <small class="has-text-link">01 Aug 2017</small>
-                      </p>
-                      <p>Bulma / Bootstrap comparison</p>
-                    </div>
-                  </a>
-                
-                <a class="navbar-item" href="https://bulma.io/blog/">
-                  More posts
+              <div id="moreDropdown" class="navbar-dropdown is-boxed">
+
+                <a class="navbar-item "  href="https://github.com/samt007/jebms-ui" target="_blank" >
+                  <p>
+                    <strong>Jebms overview</strong>
+                    <br>
+                    <small>versions:1.0.0</small>
+                  </p>
                 </a>
                 <hr class="navbar-divider">
-                <div class="navbar-item">
-                  <div class="navbar-content">
-                    <div class="level is-mobile">
-                      <div class="level-left">
-                        <div class="level-item">
-                          <strong>Stay up to date!</strong>
-                        </div>
-                      </div>
-                      <div class="level-right">
-                        <div class="level-item">
-                          <a class="button bd-is-rss is-small" href="https://bulma.io/atom.xml">
-                            <span class="icon is-small">
-                              <i class="fa fa-rss"></i>
-                            </span>
-                            <span>Subscribe</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <a class="navbar-item "  href="https://samt007.github.io/jebms-ui/documentation/" target="_blank" >
+                  <p>
+                    <strong>Jebms documentation</strong>
+                    <br>
+                    <small> 开发文档(待完善) </small>
+                  </p>
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item " href="https://bulma.io/" target="_blank" >
+                  <p>
+                    <strong>Bulma UI</strong>
+                    <br>
+                    <small>Bulma css</small>
+                  </p>
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item " href="https://buefy.github.io/" target="_blank" >
+                  <p>
+                    <strong>Buefy UI</strong>
+                    <br>
+                    <small>Lightweight UI components for Vue.js</small>
+                  </p>
+                </a>
               </div>
             </div>
+
             <div class="navbar-item has-dropdown is-hoverable">
               <div class="navbar-link">
                 More
               </div>
               <div id="moreDropdown" class="navbar-dropdown is-boxed">
-                <a class="navbar-item " href="https://bulma.io/bulma-start/">
+                <a class="navbar-item " href="https://bulma.io/bulma-start/" target="_blank" >
                   <p>
                     <strong>Bulma start</strong>
                     <br>
@@ -129,7 +86,7 @@
                   </p>
                 </a>
                 <hr class="navbar-divider">
-                <a class="navbar-item " href="https://bulma.io/made-with-bulma/">
+                <a class="navbar-item " href="https://bulma.io/made-with-bulma/" target="_blank" >
                   <p>
                     <strong>Made with Bulma</strong>
                     <br>
@@ -137,7 +94,7 @@
                   </p>
                 </a>
                 <hr class="navbar-divider">
-                <a class="navbar-item " href="https://bulma.io/extensions/">
+                <a class="navbar-item " href="https://bulma.io/extensions/" target="_blank" >
                   <p>
                     <strong>Extensions</strong>
                     <br>
@@ -235,7 +192,8 @@ export default {
 
   computed: mapGetters({
     pkginfo: 'pkg',
-    sidebar: 'sidebar'
+    sidebar: 'sidebar',
+    device: 'device'
   }),
 
   watch:{
