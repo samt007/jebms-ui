@@ -1,0 +1,175 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@page import="java.net.URLEncoder"%>
+<html>
+<!-- 
+  - Author(s): Jack
+  - Date: 2012-11-28 09:51:02
+  - Description:
+-->
+<head>
+<title>ERP单点登录</title>
+</head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+<%
+	 String usernameField = request.getParameter("usernameField");
+     String passwordField =  request.getParameter("passwordField");
+     String erpPort =  request.getParameter("erpPort");
+     //System.out.println("---------------url----------------:"+request.getParameter("requestUrl"));
+     String requestUrl = request.getParameter("requestUrl");
+     if(requestUrl!=null && !requestUrl.equals("")){
+     	requestUrl = URLEncoder.encode(requestUrl);
+     	
+     	//requestUrl = "?requestUrl="+requestUrl;
+     	
+     }
+ %>
+ 
+ <script>
+ var responseText ="";
+ function getErpPostValue(){
+ 	var erpPort = "<%=erpPort %>";
+ 	var usernameField = "<%=usernameField %>";
+ 	var passwordField = "<%=passwordField %>";
+ 	var rul =  "<%=requestUrl %>";
+    var sbmitBtn ="";
+    var macList ="";
+    var action ="";
+		var host = window.location.host;
+	  	if(host){
+	  		var hostAy = host.split(":");
+	  		host = hostAy[0];
+	  	}
+	  	if(!host){
+	  		host = "test.sanyo.com";
+	  	}
+		var url ="http://"+ host +":"+ erpPort +"/OA_HTML/AppsLocalLogin.jsp";
+		if (rul != null || rul!= ""){
+			url = url +'?requestUrl=' + rul;
+		}
+		if(!responseText){
+			responseText =getClientResponse("POST",url);
+		}
+		sbmitBtn = resolveValue(responseText,"_FORM_SUBMIT_BUTTON");
+		macList = resolveValue(responseText,"FORM_MAC_LIST");
+		action = resolveValue(responseText,"action");
+		
+		var postStr='<input type="hidden" name="_FORM" value=""/>'
+					   +'<input type="hidden" name="_AM_TX_ID_FIELD" value=""/>'
+					   +'<input type="hidden" name="SubmitButton$$unvalidated" value=""/>'
+					   +'<input type="hidden" name="SubmitButton$$serverUnvalidated" value=""/>'
+					   +'<input type="hidden" name="SubmitButton$$processFormDataCalled" value=""/>'
+					   +'<input type="hidden" name="Cancel$$unvalidated" value=""/>'
+					   +'<input type="hidden" name="Cancel$$serverUnvalidated" value=""/>'
+					   +'<input type="hidden" name="Cancel$$processFormDataCalled" value=""/>'
+					   +'<input type="hidden" name="_FORMEVENT" value=""/>'
+					   +'<input type="hidden" name="serverValidate" value=""/>'
+					   +'<input type="hidden" name="evtSrcRowIdx" value=""/>'
+					   +'<input type="hidden" name="evtSrcRowId" value=""/>'
+					   +'<input type="hidden" name="event" value=""/>'
+					   +'<input type="hidden" name="source" value=""/>'
+					   +'<input type="hidden" name="_ssoLangCode" value=""/>'
+					   +'<input type="hidden" name="_FORM_SUBMIT_BUTTON" value="'+ sbmitBtn +'"/>'
+					   +'<input type="hidden" name="FORM_MAC_LIST" value="'+ macList +'"/>'
+					   +'<input type="hidden" name="usernameField" value="'+ usernameField +'"/>'
+					   +'<input type="hidden" name="passwordField" value="'+ passwordField +'"/>';
+					  
+		
+		document.getElementById("erpform").action = "http://"+ host +":"+ erpPort +""+action;
+		var frm =document.getElementById("erpform");
+			var cnt = document.createElement("DIV");
+      		cnt.style.display = "none";
+      		frm.appendChild(cnt);
+      		cnt.innerHTML = postStr;		
+
+}
+
+	function getClientResponse(method, url){
+	    	if(window.ActiveXObject){
+		      var httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		    } else if(window.XMLHttpRequest){
+		      var httpRequest = new XMLHttpRequest();
+		    }
+	    	
+		    try{
+
+		      httpRequest.open(method, url, false);//采用同步方式
+		      httpRequest.send(null);
+		      return httpRequest.responseText;
+		      
+		    }catch(exception){
+		     	alert(" 向ERP发送请求失败请求失败" + exception);
+		    }
+	  }
+
+function resolveValue(resHtml,a){
+	    var start=-1,end=-1;
+	    var rs="";
+	  	if(!resHtml) return "";
+	  
+	  	if(a=="action"){
+	  		start = resHtml.indexOf("action");
+			end = resHtml.indexOf("\"",start+8);
+			rs =  resHtml.substr(start+8,end-start-8);
+			var reg=new RegExp("&amp;","g");
+			rs = rs.replace(reg, "&");
+			
+			return rs;
+	  	}
+	  	if(a=="_FORM_SUBMIT_BUTTON"){
+	  		start = resHtml.indexOf("'_FORM_SUBMIT_BUTTON':");
+			rs =  resHtml.substr(start+23,20);
+			return rs;
+	  	}
+
+	  	if(a=="FORM_MAC_LIST"){
+	  		start = resHtml.indexOf("FORM_MAC_LIST");
+			end = resHtml.indexOf("\"",start+37);
+			rs =  resHtml.substr(start+36,end-start-36);
+			return rs;
+	  	}
+	  	return rs;
+	  
+	  }
+ </script>
+<body>
+<form id="erpform" method="post" target="_self" action="">
+</form>
+</body>
+<script>
+  loginErp();
+	function loginErp(){
+		getErpPostValue();
+		document.getElementById("erpform").submit();
+
+	}
+</script>
+</html>
+
+
+DECLARE
+  userstr    VARCHAR2(3000);
+  request_str varchar2(3000);
+  username   VARCHAR2(30);
+  l_password VARCHAR2(300);
+
+BEGIN
+
+  username := v('USER_NAME');
+  request_str := v('REQUEST_STR');
+  if username is not null then
+  username := blob_to_clob(base64_to_blob(username));
+  end if;
+  
+  if request_str is not null then
+  request_str := url_encoder(blob_to_clob(base64_to_blob(request_str)));
+  end if;
+
+  IF username IS NULL THEN
+    userstr := 'http://erpdev.bbktel.net:8030';
+  ELSE
+    l_password := apps.bbk_mrp_sync_pub.get_user_pwd@APEX_TO_EBS_PROD(username);
+    userstr := 'http://erpdev.bbktel.net:8030/OA_HTML/ErpProxy.jsp?erpPort=8030&usernameField=' ||
+               username || '&passwordField=' || l_password||'&requestUrl='||request_str;
+  END IF;
+  RETURN userstr;
+END;
