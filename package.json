@@ -14,7 +14,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "bodymovin": "^4.12.2",
-    "buefy": "^0.6.1",
+    "buefy": "^0.9.2",
     "chart.js": "^2.7.1",
     "fastclick": "^1.0.6",
     "flatpickr": "^4.1.2",
